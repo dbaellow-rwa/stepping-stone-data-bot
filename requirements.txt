@@ -1,0 +1,19 @@
+# Core
+pandas==2.2.2
+streamlit==1.45.1
+streamlit-oauth==0.1.14
+streamlit_cookies_manager
+pycountry
+
+# Google Cloud
+google-cloud-bigquery==3.17.2
+db-dtypes==1.2.0
+google-cloud-secret-manager==2.24.0
+google-cloud-storage==2.16.0
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+
+# OpenAI
+openai==1.69.0
+tabulate
+altair

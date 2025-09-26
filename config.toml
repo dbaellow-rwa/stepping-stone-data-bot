@@ -1,0 +1,22 @@
+# .streamlit/config.toml
+
+[server]
+port = 8501
+enableCORS = true
+headless = false
+
+[client]
+showErrorDetails = "auto"
+toolbarMode = "minimal"
+layout = "wide"
+
+[theme]
+base = "light"
+primaryColor = "#FF4B4B" # A shade of red
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false # Opt-out of telemetry

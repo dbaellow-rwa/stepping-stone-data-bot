@@ -1,0 +1,7 @@
+sources_of_truth/stepping-stone-data-bot-sa.json
+google_credentials.json
+.env
+*.pem
+*.key
+sources_of_truth/trilytx-sa.json
+sources_of_truth/trilytxbot-sa.json

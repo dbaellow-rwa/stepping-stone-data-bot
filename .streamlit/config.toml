@@ -1,0 +1,19 @@
+# .streamlit/config.toml
+
+[server]
+port = 8501
+enableCORS = true
+
+[client]
+showErrorDetails = "none" # Hide full error details from end-users in production
+
+[theme]
+base = "dark"
+primaryColor = "#FF4B4B" # A shade of red
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false # Opt-out of telemetry
