@@ -8,7 +8,7 @@ def get_secret(secret_id, version_id="latest", project_id=None):
     """
     Fetches a secret from Google Secret Manager.
 
-    - If GOOGLE_APPLICATION_CREDENTIALS_TRILYTX is set, load that JSON key
+    - If GOOGLE_APPLICATION_CREDENTIALS_STEPPING_STONE_BOT is set, load that JSON key
       and use it for authentication.
     - Otherwise, rely on ADC (e.g. `gcloud auth application-default login`)
       and require either project_id or GOOGLE_CLOUD_PROJECT to be set.
@@ -23,13 +23,13 @@ def get_secret(secret_id, version_id="latest", project_id=None):
     Returns:
         str: The secret value (decoded as UTF-8).
     """
-    key_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS_TRILYTX")
+    key_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS_STEPPING_STONE_BOT")
 
     if key_path:
         # 1) Use custom JSON key for Trilytx
         if not os.path.isfile(key_path):
             raise EnvironmentError(
-                f"GOOGLE_APPLICATION_CREDENTIALS_TRILYTX is set to '{key_path}', "
+                f"GOOGLE_APPLICATION_CREDENTIALS_STEPPING_STONE_BOT is set to '{key_path}', "
                 "but that file does not exist or is not readable."
             )
         creds = service_account.Credentials.from_service_account_file(key_path)
@@ -43,7 +43,7 @@ def get_secret(secret_id, version_id="latest", project_id=None):
             adc_proj = os.environ.get("GOOGLE_CLOUD_PROJECT")
             if not adc_proj:
                 raise EnvironmentError(
-                    "No GOOGLE_APPLICATION_CREDENTIALS_TRILYTX found and no project_id passed. "
+                    "No GOOGLE_APPLICATION_CREDENTIALS_STEPPING_STONE_BOT found and no project_id passed. "
                     "Set GOOGLE_CLOUD_PROJECT for ADC or provide project_id explicitly."
                 )
             project_id = adc_proj
